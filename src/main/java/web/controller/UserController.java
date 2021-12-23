@@ -1,6 +1,6 @@
-package controller;
+package web.controller;
 
-import model.User;
+import web.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import service.UserServiseImpl;
+import web.service.UserServise;
+
 
 import java.util.List;
 
@@ -16,10 +17,10 @@ import java.util.List;
 @RequestMapping("/")
 public class UserController {
 
-    private final UserServiseImpl userServise;
+    private final UserServise userServise;
 
     @Autowired
-    public UserController(UserServiseImpl userServise) {
+    public UserController(UserServise userServise) {
         this.userServise = userServise;
     }
 
